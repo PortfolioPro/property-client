@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="propertyApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.8.2/angular-resource.min.js" charset="utf-8"></script>
+    <script src="messages.js" charset="utf-8"></script>
+    <script src="controllers/buildingsController.js" charset="utf-8"></script>
+    <script src="controllers/apartmentsController.js" charset="utf-8"></script>
+    <script src="controllers/tenantsController.js" charset="utf-8"></script>
+    <script src="routes.js" charset="utf-8"></script>
+    <script src="https://kit.fontawesome.com/fc5fd2f8c4.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <span class="fas fa-city"></span>
+        </div>
+
+        <div class="name">
+          <h1>PROPERTY MANAGER</h1>
+        </div>
+      </div>
+
+      <div class="main">
+        <ui-view></ui-view>
+      </div>
+
+      <div class="footer">
+        <span>Andres Arango | &copy; 2022</span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<div class="tenant-edit">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="tenantsIndex({buildingId: vm.buildingId, apartmentId: vm.apartmentId})">Back to tenants</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>EDIT TENANT</h2>
+    </div>
+
+    <div class="error" ng-show="vm.error">
+      <h3>Tenant validation failed!</h3>
+
+      <ul ng-repeat="(key, value) in vm.error">
+        <li class="key">{{key}}:</li>
+        <ul>
+          <li class="value" ng-repeat="error in value">{{error}}</li>
+        </ul>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="form">
+        <form>
+          <div class="row">
+            <label for="name">Name</label>
+            <input type="text" id="name" ng-model="vm.tenant.name">
+          </div>
+
+          <div class="row">
+            <label for="email">Email</label>
+            <input type="text" id="email" ng-model="vm.tenant.email">
+          </div>
+
+          <div class="row">
+            <button class="double" type="button" ng-click="vm.update()">Update tenant</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="back">
+      <a ui-sref="tenantsIndex({buildingId: vm.buildingId, apartmentId: vm.apartmentId})">&larr; Back to tenants</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="apartments-index">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="buildingsIndex">Back to buildings</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>APARTMENTS</h2>
+    </div>
+
+    <div class="success" ng-show="vm.success.show">
+      <p>{{vm.success.message}}</p>
+    </div>
+
+    <div class="content">
+      <div class="apartments">
+        <table>
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Rooms</th>
+              <th>Rent</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat="apartment in vm.apartments">
+              <td><a ui-sref="tenantsIndex({buildingId: apartment.building_id, apartmentId: apartment.id})">{{apartment.unit}}</a></td>
+              <td>{{apartment.rooms}}</td>
+              <td>{{apartment.rent}}</td>
+              <td><a ui-sref="apartmentEdit({buildingId: apartment.building_id, id: apartment.id})">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="back">
+      <a ui-sref="buildingsIndex">&larr; Back to Buildings</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="tenants-index">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="apartmentsIndex({buildingId: vm.buildingId})">Back to apartments</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>TENANTS</h2>
+    </div>
+
+    <div class="success" ng-show="vm.success.show">
+      <p>{{vm.success.message}}</p>
+    </div>
+
+    <div class="content">
+      <div class="tenants">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2"></th>
+              <th colspan="2"><a ui-sref="tenantNew({buildingId: vm.buildingId, apartmentId: vm.apartmentId})">Add new tenant</a></th>
+            </tr>
+
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th colspan="2">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat="tenant in vm.tenants" ng-if="tenant.name">
+              <td>{{tenant.name}}</td>
+              <td>{{tenant.email}}</td>
+              <td><a ui-sref="tenantEdit({buildingId: vm.buildingId, apartmentId: vm.apartmentId, id: tenant.id})">Edit</a></td>
+              <td><a href ng-click="vm.destroy(tenant)">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="back">
+      <a ui-sref="apartmentsIndex({buildingId: vm.buildingId})">&larr; Back to apartments</a>
+    </div>
+  </div>
+</div>
