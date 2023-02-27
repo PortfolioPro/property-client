@@ -1,7 +1,7 @@
 angular.module('tenantsController', ['ngResource', 'ui.router', 'messages'])
 
   .factory('tenantsFactory', ['$resource', function($resource) {
-      return $resource('https://property-server-api.herokuapp.com/api/buildings/:buildingId/apartments/:apartmentId/tenants/:id', {
+      return $resource('https://property-server-740d.onrender.com/api/buildings/:buildingId/apartments/:apartmentId/tenants/:id', {
         buildingId: '@buildingId',
         apartmentId: '@apartmentId',
         id: '@id'
